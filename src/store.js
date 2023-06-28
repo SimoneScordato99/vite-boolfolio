@@ -4,7 +4,9 @@ export const store = reactive(
     {
         project:[],
         lenguages:[],
-        generes:[]
+        generes:[],
+        current_page:null,
+        last_page:null
         
     }
 )
