@@ -1,0 +1,26 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #00000000;
+    
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #3b3b3b;
+    border-radius: 100px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b4b4b;
+  }
+  *{
+    font-family: 'Manrope', sans-serif;
+  }
