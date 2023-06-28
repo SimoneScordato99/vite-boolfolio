@@ -34,8 +34,6 @@ export default{
 <style lang="scss">
 @use './style/main.scss';
 
-  .webApp{
-    
-  }
+
 
 </style>
