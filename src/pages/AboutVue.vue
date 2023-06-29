@@ -1,7 +1,7 @@
 <script >
 import { store } from '../store';
 export default {
-    name:'HeaderVue',
+    name:'AboutVue',
     components:{
       
     },
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-    
+    suca suca
 </template>
 
 <style scoped lang="scss">

@@ -2,7 +2,7 @@
 import {store} from '../store';
 
 export default{
-  name: "projectCard",
+  name: "ProjectCard",
   props:[
     'cardProps'
   ],
@@ -24,8 +24,8 @@ export default{
             <h5 class="card-title">{{ cardProps.title }}</h5>
             <p class="card-text">{{ cardProps.description }}</p>
             <p class="card-text text-success">{{ cardProps.genere.name }}</p>
-            <ul class="list-group my-3" v-for="(eleme, index) in cardProps.lenguages" :key="index">
-                <li class="list-group-item" >{{ eleme.name }}</li>
+            <ul class="list-group my-3">
+                <li class="list-group-item" v-for="(eleme, index) in cardProps.lenguages" :key="index" >{{ eleme.name }}</li>
             </ul>
             <a href="#" class="btn btn-primary">Approfondisci</a>
         </div>
@@ -33,5 +33,7 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-
+  .card{
+    margin: 25px 0;
+  }
 </style>

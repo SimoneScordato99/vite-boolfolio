@@ -1,13 +1,13 @@
 <script >
 import {store} from '../store';
 import axios from 'axios';
-import projectCard from './projectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
 
 export default{
     name:'MainVue',
     components:{
-        projectCard
+        ProjectCard
         
     },
     data(){
@@ -34,10 +34,18 @@ export default{
             })
         },
         next(){
-            store.current_page = store.current_page + 1
+            this.store.current_page = this.store.current_page + 1;
+            if (this.store.current_page == this.store.last_page + 1) {
+
+                return this.store.current_page = 1;
+            }
         },
         prev(){
-            store.current_page = store.current_page - 1
+            this.store.current_page = this.store.current_page - 1;
+            if (this.store.current_page == 0) {
+
+                return this.store.current_page = this.store.last_page;
+            }
         }
     }
 }
@@ -46,15 +54,15 @@ export default{
 <template>
     <div class="container">
         <div class="row">
-            <projectCard class="col-6" v-for="(elem, index) in store.project" :key="index" :cardProps="elem" />
+            <ProjectCard class="dividendo" v-for="(elem, index) in store.project" :key="index" :cardProps="elem" />
         </div>
         <div class="row">
-            <nav aria-label="Page navigation example">
+            <nav aria-label="Page navigation example col-6">
                 <ul class="pagination">
                     <li class="page-item">
                         <a class="page-link" href="#" @click.prevent="prev(), chiamataTutto(current_page)">Previous</a>
                     </li>
-
+                    
                     <li class="page-item">
                         <a class="page-link" href="#" @click.prevent="next(), chiamataTutto(current_page)">Next</a>
                     </li>
@@ -65,5 +73,18 @@ export default{
 </template>
 
 <style scoped lang="scss">
-    
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .pagination{
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .dividendo{
+        
+        width: calc((100% / 2) - 50px);
+    }
 </style>
