@@ -2,7 +2,7 @@
 import {store} from '../store';
 
 export default{
-  name: "ProjectCard",
+  name: "projectCard",
   props:[
     'cardProps'
   ],
